@@ -1,0 +1,167 @@
+body {
+	font-family: 'Nunito', sans-serif;
+	padding: 0px;
+	background-color: #dc8900;
+}
+
+p {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	color: rgba(255,255,255,0.6);
+}
+
+.banner-h1 {
+	font-size: 80px;
+	font-weight: 500;
+	letter-spacing: 0em;
+	font-family: "Londrina Outline", "Helvetica Neue", Helvetica, sans-serif;
+	color: #000000;
+	text-decoration: none;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.h1, 
+h2,
+h3,
+h4 {
+	font-family: "Nunito", "Helvetica Neue", Helvetica, sans-serif;
+	letter-spacing: -0.04em;
+}
+
+h1 {
+	font-size: 50px;
+	margin: 0px;
+}
+
+.big {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 30px;
+	margin-bottom: 100px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+form {
+	text-align: center;
+	margin-top: 60px;
+}
+
+.btn {
+	font-size: 16px;
+	padding: 9px 40px;
+	border: 1px solid #dc8900;
+	background-color: #dc8900;
+	margin: 2px;
+}
+
+.btn:hover {
+	background-color: #b26f03;
+	border: 1px solid #84590e;
+}
+
+.form-control {
+	width: 400px;
+	font-size: 16px;
+	border-color: rgba(255,255,255,1.0);
+	box-shadow: none;
+	background-color: #eee;
+	padding: 20px;
+	margin: 2px;
+	
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	-webkit-transition-property: border-color, box-shadow;
+	-webkit-transition-duration: 0.15s, 0.15s;
+	-webkit-transition-timing-function: ease-in-out, ease-in-out;
+	-webkit-transition-delay: initial, initial;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition-property: border-color, box-shadow;
+	transition-duration: 0.15s, 0.15s;
+	transition-timing-function: ease-in-out, ease-in-out;
+	transition-delay: initial, initial;
+}
+
+.form-control:focus {
+	border-color: #dc8900;
+	box-shadow: 0px 0px 6px rgba(220,137,0,0.5);
+}
+
+.landing-div-1 {
+	width: 100%;
+	padding-top: 65px;
+	padding-bottom: 130px;
+	background-image: url("../images/landing-div/cloudgate.jpg"); 
+	background-size: cover;
+	-webkit-background-size: cover;
+	padding-bottom: 150px;
+
+}
+
+.landing-div-1 h1, h2 { 
+	color: #fff;
+}
+
+.landing-div-2 {
+	width: 100%;
+	background-image: url("../images/landing-div/parkour.jpg");
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-position: center center;
+	-webkit-background-position: center center;
+	padding-bottom: 150px;
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 30px solid #fff;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.landing-header {
+	margin-top: 50px;
+	background-color: rgba(0,0,0,0.6);
+	padding: 15px;
+	
+}
+
+.full-width-2 {
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: #dc8900;
+}
+
+.full-width-3 {
+	padding-top: 130px;
+	padding-bottom: 130px;
+	background-color: #2d57b8;
+}
+
+span.orange {
+	color: #dc8900; 
+}
+
+.brown-label {
+	color: #5f3600;
+	margin-bottom: 25px;
+}
+
+.glyphicon {
+	color: white;
+	font-size: 60px;
+	text-align: center;
+	margin-right: 10px;
+}
