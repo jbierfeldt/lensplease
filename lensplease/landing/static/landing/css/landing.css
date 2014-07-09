@@ -2,29 +2,7 @@
 	Connor Soltas (CEO), Jackson Bierfeldt (CTO)
 */
 
-@font-face 
-{
-	font-family: 'DIN Next LT Pro Bold';
-	src: url('../fonts/DINNextLTPro-Bold.otf') format: ('opentype');
-}
 
-@font-face 
-{
-	font-family: 'DIN Next LT Pro Medium';
-	src: url('../fonts/DINNextLTPro-Medium.otf') format: ('opentype');
-}
-
-@font-face 
-{
-	font-family: 'DIN Next LT Pro Regular';
-	src: url('../fonts/DINNextLTPro-Regular.otf') format: ('opentype');
-}
-
-@font-face 
-{
-	font-family: 'DIN Next LT Pro Light';
-	src: url('../fonts/DINNextLTPro-Light.otf') format: ('opentype');
-}
 
 body
 {
@@ -45,33 +23,49 @@ header
 {
 	background: none;
 	background-color: none;
-	padding: 0;
-	margin: 0;
+	/*padding: 0;
+	margin: 0;*/
 }
 
 img#banner-logo
 {
-	float: left;
-	width: 85px;
-	height: 85px;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
 }
 
-.banner-h1 
+.banner-h2 
 {
-	font-family: 'DIN Next LT Pro Bold', sans-serif;
-	font-size: 40px;
-	text-align: left;
-}
-
-h1 span 
-{
-	font-family: 'DIN Next LT Pro Regular', sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
 	color: #2D3D46;
+	font-size: 35px;
+	text-align: left;
+	
+	margin-top: 21px;
+	margin-bottom: 0;
+}
+
+h2 span
+{
+	color: #10161A;
+	font-weight: 900;
+}
+
+button
+{
+	background: none;
+	border: none;
+}
+
+.banner-button
+{
+	padding: 20px;
 }
 
 .bg-heart
 {
-	background-image: url('../images/bg-heart.png');
+	background-image: url('../../landing/images/bg-heart.png');
 	background-repeat: repeat;
 }
 
@@ -82,19 +76,32 @@ h1 span
 
 h1
 {
+	font-family: 'Lato', sans-serif;
 	color: #10161A;
+	line-height: normal;
+}
+
+.thin 
+{
+	font-weight: 300;
+	font-size: 40px;
+}
+
+.bold 
+{
+	font-weight: 900;
+	font-size: 55px;
+}
+
+.white
+{
+	color: #fff;
 }
 
 .press
 {
 	background-color: #CCD6DA;
 	margin: 0;
-}
-
-h2
-{
-	color: #10161A;
-	text-align: left;
 }
 
 p
