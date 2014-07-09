@@ -1,3 +1,111 @@
+/* (c) Lensplease 2014
+	Connor Soltas (CEO), Jackson Bierfeldt (CTO)
+*/
+
+@font-face 
+{
+	font-family: 'DIN Next LT Pro Bold';
+	src: url('../fonts/DINNextLTPro-Bold.otf') format: ('opentype');
+}
+
+@font-face 
+{
+	font-family: 'DIN Next LT Pro Medium';
+	src: url('../fonts/DINNextLTPro-Medium.otf') format: ('opentype');
+}
+
+@font-face 
+{
+	font-family: 'DIN Next LT Pro Regular';
+	src: url('../fonts/DINNextLTPro-Regular.otf') format: ('opentype');
+}
+
+@font-face 
+{
+	font-family: 'DIN Next LT Pro Light';
+	src: url('../fonts/DINNextLTPro-Light.otf') format: ('opentype');
+}
+
+body
+{
+	background-color: #D9DEE1;
+}
+
+header
+{
+	background-color: #ffffff;
+}
+
+.fg1, .fg2,
+.fg3, .fg4, 
+.fg5, .fg6, 
+.fg7, .fg8, 
+.fg9, .fg10, 
+.fg11, .fg12 
+{
+	background: none;
+	background-color: none;
+	padding: 0;
+	margin: 0;
+}
+
+img#banner-logo
+{
+	float: left;
+	width: 85px;
+	height: 85px;
+}
+
+.banner-h1 
+{
+	font-family: 'DIN Next LT Pro Bold', sans-serif;
+	font-size: 40px;
+	text-align: left;
+}
+
+h1 span 
+{
+	font-family: 'DIN Next LT Pro Regular', sans-serif;
+	color: #2D3D46;
+}
+
+.bg-heart
+{
+	background-image: url('../images/bg-heart.png');
+	background-repeat: repeat;
+}
+
+.bg-pink
+{
+	background-color: #CD5151;
+}
+
+h1
+{
+	color: #10161A;
+}
+
+.press
+{
+	background-color: #CCD6DA;
+	margin: 0;
+}
+
+h2
+{
+	color: #10161A;
+	text-align: left;
+}
+
+p
+{
+	color: #2D3D46;
+	text-align: left;
+}
+
+
+/* WE ARE NO LONGER USING BOOTSTRAP. UNCOMMENT THIS SECTION IF THAT EVER CHANGES
+
 body {
 	padding-top: 0px;
 	border-top: 10px solid #000;
@@ -256,3 +364,5 @@ p.copyright {
 	font-size: 14px;
 	margin-bottom: 20px;
 }
+
+END OF THE COMMENTED-OUT OLD BOOTSTRAP STUFF */
