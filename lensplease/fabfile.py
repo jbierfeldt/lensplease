@@ -2,7 +2,7 @@ from __future__ import with_statement
 from fabric.api import *
 from fabric.contrib.console import confirm
 
-env.hosts = ['jbierfeldt@dev.lensplease.com']
+env.hosts = ['lensplease@dev.lensplease.com']
 
 def test():
     with settings(warn_only=True):
