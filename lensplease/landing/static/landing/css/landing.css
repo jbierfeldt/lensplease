@@ -3,37 +3,7 @@
 */
 
 
-
-body
-{
-	background-color: #D9DEE1;
-}
-
-header
-{
-	background-color: #ffffff;
-}
-
-.fg1, .fg2,
-.fg3, .fg4, 
-.fg5, .fg6, 
-.fg7, .fg8, 
-.fg9, .fg10, 
-.fg11, .fg12 
-{
-	background: none;
-	background-color: none;
-	/*padding: 0;
-	margin: 0;*/
-}
-
-img#banner-logo
-{
-	width: 50px;
-	height: 50px;
-	margin: 10px;
-}
-
+/* --- TYPOGRAPHY --- */
 .banner-h2 
 {
 	font-family: 'Lato', sans-serif;
@@ -51,29 +21,7 @@ h2 span
 	color: #10161A;
 	font-weight: 900;
 }
-
-button
-{
-	background: none;
-	border: none;
-}
-
-.banner-button
-{
-	padding: 20px;
-}
-
-.bg-heart
-{
-	background-image: url('../../landing/images/bg-heart.png');
-	background-repeat: repeat;
-}
-
-.bg-pink
-{
-	background-color: #CD5151;
-}
-
+	
 h1
 {
 	font-family: 'Lato', sans-serif;
@@ -98,16 +46,76 @@ h1
 	color: #fff;
 }
 
+p
+{
+	color: #2D3D46;
+	text-align: left;
+}
+
+
+/* --- LAYOUT --- */
+body
+{
+	background-color: #D9DEE1;
+}
+
+header
+{
+	background-color: #ffffff;
+}
+
+.fg1, .fg2,
+.fg3, .fg4, 
+.fg5, .fg6, 
+.fg7, .fg8, 
+.fg9, .fg10, 
+.fg11, .fg12 
+{
+	background: none;
+	background-color: none;
+	/*padding: 0;
+	margin: 0;*/
+}
+
+.bg-heart
+{
+	background-image: url('../../landing/images/bg-heart.png');
+	background-repeat: repeat;
+}
+
+.bg-pink
+{
+	background-color: #CD5151;
+}
+
 .press
 {
 	background-color: #CCD6DA;
 	margin: 0;
 }
 
-p
+
+/* --- IMAGES --- */
+
+img#banner-logo
 {
-	color: #2D3D46;
-	text-align: left;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+}
+
+
+/* --- BUTTONS, LINKS --- */
+
+button
+{
+	background: none;
+	border: none;
+}
+
+.banner-button
+{
+	padding: 20px;
 }
 
 
