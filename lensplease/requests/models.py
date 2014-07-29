@@ -10,7 +10,8 @@ class TimeStampedModel(models.Model):
          abstract = True
          
 class PhotographerRequest(TimeStampedModel):
-    name = models.CharField(max_length=256, verbose_name="Name")
+    first_name = models.CharField(max_length=256, verbose_name="First Name")
+    last_name = models.CharField(max_length=256, verbose_name="Last Name")
     email = models.EmailField(max_length=256)
     organization = models.CharField(max_length=256, blank=True)
     max_price = models.IntegerField(verbose_name="I'm looking to spend no more than...")
@@ -20,5 +21,5 @@ class PhotographerRequest(TimeStampedModel):
     satisfied = models.BooleanField(default=False)
     
     def __unicode__(self):
-		return str("Request from" + " " + self.name + " " + "for less than" + " $" + str(self.max_price))
+		return str("Request from" + " " + self.first_name + " " + "for less than" + " $" + str(self.max_price))
         
