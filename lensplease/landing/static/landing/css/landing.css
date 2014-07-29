@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .container-1 {
-	background: #D9DEE1 url('../../landing/images/bg-heart.png') repeat;
+	background: #D9DEE1 url('../../../static/core/images/bg-heart.png') repeat;
 	padding-top: 60px;
 	padding-bottom: 80px;
 }
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .container-5 {
-	background: #D9DEE1 url('../../landing/images/bg-heart.png') repeat;
+	background: #D9DEE1 url('../../../static/core/images/bg-heart.png') repeat;
 	padding: 80px 0;
 }
 
