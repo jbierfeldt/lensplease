@@ -190,46 +190,56 @@
 					</div>
 				</form><!-- /form 
 				-->
-			
+            <form action="{% url 'photographerrequest_add' %}" method="post">
+            {% csrf_token %}
 				<div class="row row-form">
 					<div class="col-md-2 col-md-offset-3 col-sm-4">
-						<input type="text" class="form-control" id="request-name" placeholder="First name">
+					    {{ photographerrequest_form.first_name.errors }}
+						{{ photographerrequest_form.first_name }}
 					</div>
 					<div class="col-md-2 col-sm-4">
-						<input type="text" class="form-control" id="request-name" placeholder="Last name">
+					    {{ photographerrequest_form.last_name.errors }}
+						{{ photographerrequest_form.last_name }}
 					</div>
 					<div class="col-md-2 col-sm-4">
-						<input type="email" class="form-control" id="request-email" placeholder="Email">
+					    {{ photographerrequest_form.email.errors }}
+						{{ photographerrequest_form.email }}
 					</div>
 				</div><!-- /.row -->
 				
 				<div class="row row-form">
 					<div class="col-md-3 col-md-offset-3 col-sm-4">
-						<input type="text" class="form-control" id="request-org" placeholder="Organization (optional)">
+					    {{ photographerrequest_form.organization.errors }}
+						{{ photographerrequest_form.organization }}
 					</div>
 					<div class="col-md-3 col-sm-4">
-						<input type="date" class="form-control" id="request-datetime">
+					    {{ photographerrequest_form.date_needed.errors }}
+						{{ photographerrequest_form.date_needed }}
+						
 					</div>
 				</div><!-- /.row -->
 				
 				<div class="row row-form">
 					<div class="col-md-6 col-md-offset-3 col-sm-4">
-						<input type="range" class="form-control" id="request-budget" placeholder="Budget range">
+					    {{ photographerrequest_form.max_price.errors }}
+						{{ photographerrequest_form.max_price }}
 					</div>
 				</div><!-- /.row -->
 				
 				<div class="row row-form">
-					<div class="col-md-6 col-md-offset-3 col-sm-12">
-						<textarea class="form-control" placeholder="Hullo! Include details related to your project here"></textarea>
+                    <div class="col-md-6 col-md-offset-3 col-sm-12">
+					    {{ photographerrequest_form.message.errors }}
+						{{ photographerrequest_form.message }}
 					</div>
 				</div><!-- /.row -->
-				
+								
 				<div class="row-row-form">
 					<div class="col-md-6 col-md-offset-3 col-sm-12">
 						<button type="submit" class="submit-request">Send</button>
 						<p>This doesn't commit you to anything -- it's just so we can be in touch.</p>
 					</div>
 				</div><!-- /.row -->
+            </form>
 				
 			</div><!-- /.container -->
 		</div><!-- /.container-8 -->
