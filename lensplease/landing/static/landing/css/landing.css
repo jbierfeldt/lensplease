@@ -167,3 +167,30 @@ h1, h2, h3, h4, h5, h6,
 .row-form {
 	margin-top: 20px;
 }
+
+.form-control {
+	font-family: "Lato";
+	font-weight: 300;
+	font-size: 20px;
+	padding: 9px 10px;
+	height: 43px;
+	border: 1px solid #8fadbd;
+	border-radius: 3px;
+	box-shadow: inset 0px 1px 3px rgba(0,0,0,0.2);
+}
+
+.submit-request {
+	margin-top: 20px;
+	background: #2D3D46;
+	border: none;
+	padding: 15px 50px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 25px;
+	box-shadow: inset 0px -10px 0px rgba(0,0,0,0.4);
+}
+
+.container-9 {
+	background: #fff;
+	border: 1px solid #8fadbd;
+}
