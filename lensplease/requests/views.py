@@ -3,20 +3,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormVi
 from requests.forms import PhotographerRequestForm
 
 from requests.models import PhotographerRequest
-
-class PhotographerRequestAdd(FormView):
-    template_name = 'landing/landing.html'
-    form_class = PhotographerRequestForm
-    success_url = "/"
-    
-    def get_context_data(self, **kwargs):
-        context = super(PhotographerRequestAdd, self).get_context_data(**kwargs)
-        context['photographerrequest_form'] = context.get('form')
-        return context
-        
-    def form_valid(self, form):
-        form.save(commit = True)
-        return super(PhotographerRequestAdd, self).form_valid(form)
         
 class PhotographerRequestUpdate(UpdateView):
     model = PhotographerRequest
