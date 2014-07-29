@@ -14,6 +14,10 @@ class PhotographerRequestAdd(FormView):
         context['photographerrequest_form'] = context.get('form')
         return context
         
+    def form_valid(self, form):
+        form.save(commit = True)
+        return super(PhotographerRequestAdd, self).form_valid(form)
+        
 class PhotographerRequestUpdate(UpdateView):
     model = PhotographerRequest
     success_url = "/"
