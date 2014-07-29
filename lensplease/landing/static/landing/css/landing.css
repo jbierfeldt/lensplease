@@ -119,16 +119,15 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .container-8 {
-	background: #D9DEE1;
+	background: #bfcdd1;
 }
 
 .container-form {
 	padding: 0;
 }
 
-.nav-justified.nav-tabs.nav {
-	margin: 0px -15px;
-	margin-right: -15px !important;
+.nav-tabs {
+	margin-bottom: 60px;
 }
 
 .nav-tabs>li {
@@ -140,9 +139,18 @@ h1, h2, h3, h4, h5, h6,
 	border: none;
 }
 
+.nav-tabs.nav-justified>li>a {
+	background: #D9DEE1;
+}
+
+.nav-tabs.nav-justified>li>a:hover {
+	background: #CCD6DA;
+}
+
 .nav-tabs.nav-justified>.active>a,
 .nav-tabs.nav-justified>.active>a:hover {
 	border: none;
+	background: #bfcdd1;
 }
 
 .tab-header {
@@ -154,4 +162,8 @@ h1, h2, h3, h4, h5, h6,
 .nav-tabs>li>a>h2 {
 	color: #2D3D46;
 	font-size: 16px;
+}
+
+.row-form {
+	margin-top: 20px;
 }

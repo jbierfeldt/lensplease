@@ -160,36 +160,72 @@
 					</li>
 					<li>
 						<a href="#photographer-signup">
-							<h1 class="tab-header">Photographer signup</h1>
+							<h1 class="tab-header">I'm a photographer</h1>
 							<h2>We'll send out jobs frequently and we're easy to discuss payment with.</h2>
 						</a>
 					</li>
 				</ul>
-			
-				<div class="row">
-					<div class="col-md-4 col-md-offset-2 col-sm-6">
-						Name
-					</div>
-					<div class="col-md-4 col-sm-6">
-						Email
-					</div>
-				</div><!-- /.row -->
 				
-				<div class="row">
-					<div class="col-md-3 col-md-offset-2 col-sm-4">
-						Organization (optional)
+				<!--
+				<form role="form">
+				
+					<div class="form-group">
+						<input type="text" class="form-control" id="request-name" placeholder="Name">
 					</div>
-					<div class="col-md-3 col-sm-4">
-						I'm looking to spend no more than...
+					
+					<div class="form-group">
+						<input type="email" class="form-control" id="request-email" placeholder="Email">
+					</div>
+					
+					<div class="form-group">
+						<input type="text" class="form-control" id="request-org" placeholder="Organization (optional)">
+					</div>
+					
+					<div class="form-group">
+						<input type="range" class="form-control" id="request-budget" placeholder="Budget range">
+					</div>
+					
+					<div class="form-group">
+						<input type="datetime-local" class="form-control" id="request-datetime" placeholder="Date(s)/time(s) needed">
+					</div>
+				</form><!-- /form 
+				-->
+			
+				<div class="row row-form">
+					<div class="col-md-2 col-md-offset-3 col-sm-4">
+						<input type="text" class="form-control" id="request-name" placeholder="First name">
 					</div>
 					<div class="col-md-2 col-sm-4">
-						Date(s) needed
+						<input type="text" class="form-control" id="request-name" placeholder="Last name">
+					</div>
+					<div class="col-md-2 col-sm-4">
+						<input type="email" class="form-control" id="request-email" placeholder="Email">
 					</div>
 				</div><!-- /.row -->
 				
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 col-sm-12">
-						Message, details, etc.
+				<div class="row row-form">
+					<div class="col-md-3 col-md-offset-3 col-sm-4">
+						<input type="text" class="form-control" id="request-org" placeholder="Organization (optional)">
+					</div>
+					<div class="col-md-3 col-sm-4">
+						<input type="date" class="form-control" id="request-datetime">
+					</div>
+				</div><!-- /.row -->
+				
+				<div class="row row-form">
+					<div class="col-md-6 col-md-offset-3 col-sm-4">
+						<input type="range" class="form-control" id="request-budget" placeholder="Budget range">
+					</div>
+				</div><!-- /.row -->
+				
+				<div class="row row-form">
+					<div class="col-md-6 col-md-offset-3 col-sm-12">
+						<textarea class="form-control">Hullo</textarea>
+					</div>
+				</div><!-- /.row -->
+				
+				<div class="row-row-form">
+					<div class="col-md-6 col-md-offset-3 col-sm-12">
 						<button type="submit" class="submit-request">Send</button>
 						<p>This doesn't commit you to anything -- it's just so we can be in touch.</p>
 					</div>
