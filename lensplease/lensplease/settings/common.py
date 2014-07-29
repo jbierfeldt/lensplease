@@ -23,7 +23,6 @@ INSTALLED_APPS = (
     'landing',
     'south',
     'registration',
-    'core',
 )
 
 MIDDLEWARE_CLASSES = (
