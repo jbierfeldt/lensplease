@@ -17,6 +17,7 @@
 
 		<!-- Bootstrap -->
 		<link href="{% static 'landing/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'landing/css/bootstrap-slider.css' %}" rel="stylesheet">
 		<link href="{% static 'landing/css/landing.css' %}" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,14 +27,33 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		
+		
+		<link href="{% static 'landing/css/landing.css' %}" rel="stylesheet">
 		<script type="text/javascript">
-		    function goToOnLoadAnchor()
-                {
-                    target_element = document.getElementById('{{ anchor }}');
-                    if (target_element != null){
-                        target_element.scrollIntoView();
-                    }
+		    function initalize() {
+    		    goToOnLoadAnchor();
+    		    loadPriceSlider();
+		    }
+		    function goToOnLoadAnchor() {
+                target_element = document.getElementById('{{ anchor }}');
+                if (target_element != null){
+                    target_element.scrollIntoView();
                 }
+            }
+            function loadPriceSlider() {
+                $('#id_max_price').slider({
+                    formater: function(value) {
+                        return 'I\'d pay: $' + value;
+                    }
+                });
+                function changePriceValue() {
+                    $("#span_max_price").text("$"+priceSlider.getValue());
+                }
+                var priceSlider = $('#id_max_price').slider()
+                    .on('slide', changePriceValue)
+                    .data('slider');
+            }
+            
 		</script>
 	</head>
 	
@@ -238,8 +258,17 @@
 				
 				<div class="row row-form">
 					<div class="col-md-6 col-md-offset-3 col-sm-4">
-					    {{ photographerrequest_form.max_price.errors }}
-						{{ photographerrequest_form.max_price }}
+					    <div class="row">
+					        <div class="col-md-4">
+                                <strong>I'd pay up to: </strong><span id="span_max_price">$25</span>
+                            </div>
+                            <div class="col-md-8">
+                                <strong>$10</strong>
+                                {{ photographerrequest_form.max_price.errors }}
+                                {{ photographerrequest_form.max_price }}
+                                <strong>$200</strong>
+                            </div>
+					    </div>
 					</div>
 				</div><!-- /.row -->
 				
@@ -270,12 +299,13 @@
 			</div><!-- /.container -->
 		</div><!-- /.container-8 -->
 
-        <script type="text/javascript">
-            window.attachEvent('onload', goToOnLoadAnchor());
-        </script>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="{% static 'landing/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'landing/js/bootstrap-slider.js' %}"></script>
+		<script type="text/javascript">
+            window.attachEvent('onload', initalize());
+        </script>
 	</body>
 </html>
