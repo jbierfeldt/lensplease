@@ -19,6 +19,7 @@
 		<link href="{% static 'landing/css/bootstrap.min.css' %}" rel="stylesheet">
 		<link href="{% static 'landing/css/bootstrap-slider.css' %}" rel="stylesheet">
 		<link href="{% static 'landing/css/landing.css' %}" rel="stylesheet">
+		<link href="{% static 'landing/css/bootstrap-formhelpers.min.css' %}" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,18 +41,13 @@
                     target_element.scrollIntoView();
                 }
             }
+            
             function loadPriceSlider() {
                 $('#id_max_price').slider({
                     formater: function(value) {
                         return 'I\'d pay: $' + value;
                     }
-                });
-                function changePriceValue() {
-                    $("#span_max_price").text("$"+priceSlider.getValue());
-                }
-                var priceSlider = $('#id_max_price').slider()
-                    .on('slide', changePriceValue)
-                    .data('slider');
+                })
             }
             
 		</script>
@@ -246,23 +242,33 @@
 				
 				<div class="row row-form">
 					<div class="col-md-3 col-md-offset-3 col-sm-4">
+					    {{ photographerrequest_form.city.errors }}
+						{{ photographerrequest_form.city }}
+					</div>
+					<div class="col-md-3 col-sm-4">
+					    {{ photographerrequest_form.phone.errors }}
+						{{ photographerrequest_form.phone }}
+					</div>
+				</div><!-- /.row -->
+				
+				<div class="row row-form">
+					<div class="col-md-3 col-md-offset-3 col-sm-4">
 					    {{ photographerrequest_form.organization.errors }}
 						{{ photographerrequest_form.organization }}
 					</div>
 					<div class="col-md-3 col-sm-4">
 					    {{ photographerrequest_form.date_needed.errors }}
 						{{ photographerrequest_form.date_needed }}
-						
 					</div>
 				</div><!-- /.row -->
 				
 				<div class="row row-form">
 					<div class="col-md-6 col-md-offset-3 col-sm-4">
 					    <div class="row">
-					        <div class="col-md-4">
-                                <strong>I'd pay up to: </strong><span id="span_max_price">$25</span>
+					        <div class="col-md-2">
+                                <strong>I'd pay up to: </strong>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <strong>$10</strong>
                                 {{ photographerrequest_form.max_price.errors }}
                                 {{ photographerrequest_form.max_price }}
@@ -271,7 +277,7 @@
 					    </div>
 					</div>
 				</div><!-- /.row -->
-				
+								
 				<div class="row row-form">
                     <div class="col-md-6 col-md-offset-3 col-sm-12">
 					    {{ photographerrequest_form.message.errors }}
@@ -304,6 +310,7 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="{% static 'landing/js/bootstrap.min.js' %}"></script>
 		<script src="{% static 'landing/js/bootstrap-slider.js' %}"></script>
+		<script src="{% static 'landing/js/bootstrap-formhelpers.min.js' %}"></script>
 		<script type="text/javascript">
             window.attachEvent('onload', initalize());
         </script>

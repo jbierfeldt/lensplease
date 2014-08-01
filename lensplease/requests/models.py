@@ -13,12 +13,21 @@ class PhotographerRequest(TimeStampedModel):
     first_name = models.CharField(max_length=256, verbose_name="First Name")
     last_name = models.CharField(max_length=256, verbose_name="Last Name")
     email = models.EmailField(max_length=256)
+    city = models.CharField(max_length=256)
+    phone = models.CharField(max_length=20, verbose_name="Phone Number", blank=True)
     organization = models.CharField(max_length=256, blank=True)
-    max_price = models.IntegerField(verbose_name="I'm looking to spend no more than...")
-    date_needed = models.DateField()
-    message = models.TextField()
+    max_price = models.IntegerField(verbose_name="I'm looking to spend no more than...", default=50)
+    date_needed = models.DateField(blank=True, null=True)
+    message = models.TextField(blank=True)
     
-    satisfied = models.BooleanField(default=False)
+    # Meta Fields
+    follow_up = models.BooleanField(default=False, verbose_name="Followed up with Client?")
+    fulfilled = models.BooleanField(default=False, verbose_name="Fulfilled?")
+    payment_received = models.BooleanField(default=False, verbose_name="Payment received from Customer?")
+    payment_made = models.BooleanField(default=False, verbose_name="Payment made to Photographer?")
+    notes = models.TextField(blank=True, verbose_name="Notes for Administrators")
+    
+    # ForeignKey to Photographer Set Later
     
     def __unicode__(self):
 		return str("Request from" + " " + self.first_name + " " + "for less than" + " $" + str(self.max_price))
