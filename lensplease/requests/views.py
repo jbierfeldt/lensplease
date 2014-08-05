@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
-from requests.forms import PhotographerRequestForm
+from requests.forms import LandingPhotographerRequestForm
 
 from requests.models import PhotographerRequest
         

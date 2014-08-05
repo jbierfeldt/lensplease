@@ -2,7 +2,8 @@ from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.contrib.messages.views import SuccessMessageMixin
-from requests.forms import PhotographerRequestForm
+from requests.forms import LandingPhotographerRequestForm
+from photographer.forms import LandingPhotographerRegistrationForm
 
 class LandingView(TemplateView):
 
@@ -10,14 +11,15 @@ class LandingView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(LandingView, self).get_context_data(**kwargs)
-        context['photographerrequest_form'] = PhotographerRequestForm
+        context['photographerrequest_form'] = LandingPhotographerRequestForm
+        context['photographerregistration_form'] = LandingPhotographerRegistrationForm
         
         return context
         
 class PhotographerRequestCreate(SuccessMessageMixin, CreateView):
 
     template_name = 'landing/landing.html'
-    form_class = PhotographerRequestForm
+    form_class = LandingPhotographerRequestForm
     success_message = "Thanks, %(first_name)s! We'll contact you at %(email)s when we have news for you."
     
     def get_context_data(self, **kwargs):
