@@ -16,15 +16,15 @@ class PhotographerRequest(TimeStampedModel):
     city = models.CharField(max_length=256)
     phone = models.CharField(max_length=20, verbose_name="Phone Number", blank=True)
     organization = models.CharField(max_length=256, blank=True)
-    max_price = models.IntegerField(verbose_name="I'm looking to spend no more than...", default=50)
+    max_price = models.IntegerField(verbose_name="Max Price", default=50)
     date_needed = models.DateField(blank=True, null=True)
     message = models.TextField(blank=True)
     
     # Meta Fields
-    follow_up = models.BooleanField(default=False, verbose_name="Followed up with Client?")
+    follow_up = models.BooleanField(default=False, verbose_name="Followed up?")
     fulfilled = models.BooleanField(default=False, verbose_name="Fulfilled?")
-    payment_received = models.BooleanField(default=False, verbose_name="Payment received from Customer?")
-    payment_made = models.BooleanField(default=False, verbose_name="Payment made to Photographer?")
+    payment_received = models.BooleanField(default=False, verbose_name="Payment Received?")
+    payment_made = models.BooleanField(default=False, verbose_name="Payment Made?")
     notes = models.TextField(blank=True, verbose_name="Notes for Administrators")
     
     # ForeignKey to Photographer Set Later
