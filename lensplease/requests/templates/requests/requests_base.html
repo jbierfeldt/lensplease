@@ -31,14 +31,7 @@
 {% block javascript %}		
     <script type="text/javascript">
         function initalize() {
-            goToOnLoadAnchor();
             loadPriceSlider();
-        }
-        function goToOnLoadAnchor() {
-            target_element = document.getElementById('{{ anchor }}');
-            if (target_element != null){
-                target_element.scrollIntoView();
-            }
         }
         
         function loadPriceSlider() {
