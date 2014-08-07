@@ -1,52 +1,89 @@
-{% extends "landing/landing_base.html" %}
 {% load staticfiles %}
 
-{% block metatags %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lensplease the trusted, location-based marketplace for finding and hiring premier amateur photographers.">
-    <meta name="keywords" content="lensplease, lens, please, photography, hire, photographers, amateur, amateur photographers, student, student photographers, uchicago, built at uchicago, edge uchicago, marketplace, cheap photography, book photographer, hyde park, university of chicago">
-    <meta name="author" content="Connor Soltas and Jackson Bierfeldt">
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Lensplease the trusted, location-based marketplace for finding and hiring premier amateur photographers.">
+		<meta name="keywords" content="lensplease, lens, please, photography, hire, photographers, amateur, amateur photographers, student, student photographers, uchicago, built at uchicago, edge uchicago, marketplace, cheap photography, book photographer, hyde park, university of chicago">
+		<meta name="author" content="Connor Soltas and Jackson Bierfeldt">
+	
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'landing/images/lp-icon.ico' %}">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
-{% block title %}
-    ShutterClub
-{% endblock %}
+		<title>Lensplease</title>
 
-{% block shortcuticon %}
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'landing/images/lp-icon.ico' %}">
-{% endblock %}
+		<!-- Bootstrap -->
+		<link href="{% static 'landing/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'landing/css/bootstrap-slider.css' %}" rel="stylesheet">
+		<link href="{% static 'landing/css/landing.css' %}" rel="stylesheet">
+		<link href="{% static 'landing/css/bootstrap-formhelpers.min.css' %}" rel="stylesheet">
 
-{% block fonts %}
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-{% endblock %}
-
-{% block stylesheets %}
-    <link href="{% static 'landing/css/bootstrap-slider.css' %}" rel="stylesheet">
-    <link href="{% static 'landing/css/landing.css' %}" rel="stylesheet">
-    <link href="{% static 'landing/css/bootstrap-formhelpers.min.css' %}" rel="stylesheet">
-{% endblock %}
-
-{% block javascript %}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        function initalize() {
-            loadPriceSlider();
-        }
-        function loadPriceSlider() {
-            $('#id_max_price').slider({
-                formater: function(value) {
-                    return 'I\'d pay: $' + value;
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		
+		<link href="{% static 'landing/css/landing.css' %}" rel="stylesheet">
+		<script type="text/javascript">
+		    function initalize() {
+    		    goToOnLoadAnchor();
+    		    loadPriceSlider();
+		    }
+		    function goToOnLoadAnchor() {
+                target_element = document.getElementById('{{ anchor }}');
+                if (target_element != null){
+                    target_element.scrollIntoView();
                 }
-            })
-        }        
-    </script>
-{% endblock %}
+            }
+            
+            function loadPriceSlider() {
+                $('#id_max_price').slider({
+                    formater: function(value) {
+                        return 'I\'d pay: $' + value;
+                    }
+                })
+            }
+            
+		</script>
+	</head>
+	
+	<body>
+	{{ anchor }}
+		
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				
+				<!-- Group the logo/brand and toggle button for toggling -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<a class="navbar-brand" href="#">lensplease</a>
+				</div><!-- /.navbar-header -->
+				
+				
+				<!-- Group all the links and other nav content for toggling -->
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">I'm a photographer</a></li>
+						<li><a href="#">Request a photographer now</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-->
+		</nav><!-- /nav -->
 
-{% block content %}
-<!-- CAROUSEL -->
+		<!-- CAROUSEL -->
 		<div class="container-1">
 			<div class="container">
 				<div class="carousel">
@@ -289,7 +326,6 @@
                     <div class="row-row-form">
 			    		<div class="col-md-6 col-md-offset-3 col-sm-12">
 			    			<button type="submit" class="submit-request">Send</button>
-                            <p>This doesn't commit you to anything -- it's just so we can be in touch.</p>
 			    		</div>
 			    	</div><!-- /.row -->
                 </form>
@@ -298,40 +334,24 @@
             </div><!-- ./container-fluid -->
 				
         </div><!-- /.container-8 -->
-        <script type="text/javascript">
-        $('ul.nav-tabs').each(function(){
-            var $active, $content, $links = $(this).find('a');
-            
-            // If the location.hash matches one of the links, use that as the active tab.
-            // If no match is found, use the first link as the initial active tab.
-            $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-            $active.addClass('active');
+		
+		<!-- FOOTER -->
+		<div class="container-9">
+			<div class="container">
+				<h1>lensplease</h1>
+				<div class="row">
+				</div>
+			</div><!-- /.container -->
+		</div><!-- /.container-9 -->
 
-            $content = $($active[0].hash);
-            
-            // Hide the remaining content
-            $links.not($active).each(function () {
-                $(this.hash).hide();
-            });
-            
-            // Bind the click event handler
-            $(this).on('click', 'a', function(e){
-                // Make the old tab inactive.
-                $active.removeClass('active');
-                $content.hide();
-                
-                // Update the variables with the new link and content
-                $active = $(this);
-                $content = $(this.hash);
-                
-                // Make the tab active.
-                $active.addClass('active');
-                $content.show();
-                
-                // Prevent the anchor's default click action
-                e.preventDefault();
-            });
-        });
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="{% static 'landing/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'landing/js/bootstrap-slider.js' %}"></script>
+		<script src="{% static 'landing/js/bootstrap-formhelpers.min.js' %}"></script>
+		<script type="text/javascript">
+            window.attachEvent('onload', initalize());
         </script>
-
-{% endblock %}
+	</body>
+</html>

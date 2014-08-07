@@ -1,0 +1,80 @@
+{% extends "requests/requests_base.html" %}
+{% load staticfiles %}
+
+    	{% block sub_content %}
+    	    <h1>Inquire about a Photographer!</h1>
+    	    <div id="request-form">
+                {% if form.errors %}
+                    <p class="errors">Please correct the errors below: {{ form.non_field_errors }}</p>
+                {% endif %}
+                <form action="{% url 'photographerrequest_create' %}" method="post" id="request-form-form">
+                {% csrf_token %}
+			    	<div class="row row-form">
+			    		<div class="col-md-2 col-md-offset-3 col-sm-4">
+			    		    {{ form.first_name.errors }}
+			    			{{ form.first_name }}
+			    		</div>
+			    		<div class="col-md-2 col-sm-4">
+			    		    {{ form.last_name.errors }}
+			    			{{ form.last_name }}
+			    		</div>
+			    		<div class="col-md-2 col-sm-4">
+			    		    {{ form.email.errors }}
+			    			{{ form.email }}
+			    		</div>
+			    	</div><!-- /.row -->
+			    	
+			    	<div class="row row-form">
+			    		<div class="col-md-3 col-md-offset-3 col-sm-4">
+			    		    {{ form.city.errors }}
+			    			{{ form.city }}
+			    		</div>
+			    		<div class="col-md-3 col-sm-4">
+			    		    {{ form.phone.errors }}
+			    			{{ form.phone }}
+			    		</div>
+			    	</div><!-- /.row -->
+			    	
+			    	<div class="row row-form">
+			    		<div class="col-md-3 col-md-offset-3 col-sm-4">
+			    		    {{ form.organization.errors }}
+			    			{{ form.organization }}
+			    		</div>
+			    		<div class="col-md-3 col-sm-4">
+			    		    {{ form.date_needed.errors }}
+			    			{{ form.date_needed }}
+			    		</div>
+			    	</div><!-- /.row -->
+			    					
+			    	<div class="row row-form">
+                        <div class="col-md-6 col-md-offset-3 col-sm-12">
+			    		    {{ form.message.errors }}
+			    			{{ form.message }}
+			    		</div>
+			    	</div><!-- /.row -->
+			    	
+			    	<div class="row row-form">
+			    		<div class="col-md-6 col-md-offset-3 col-sm-4">
+			    		    <div class="row">
+			    		        <div class="col-md-2">
+                                    <strong>I'd pay up to: </strong>
+                                </div>
+                                <div class="col-md-10">
+                                    <strong>$10</strong>
+                                    {{ form.max_price.errors }}
+                                    {{ form.max_price }}
+                                    <strong>$200</strong>
+                                </div>
+			    		    </div>
+			    		</div>
+			    	</div><!-- /.row -->
+			    					
+			    	<div class="row-row-form">
+			    		<div class="col-md-6 col-md-offset-3 col-sm-12">
+			    			<button type="submit" class="submit-request">Send</button>
+			    			<p>This doesn't commit you to anything -- it's just so we can be in touch.</p>
+			    		</div>
+			    	</div><!-- /.row -->
+                </form>
+            </div><!-- /#request-form -->
+        {% endblock %}

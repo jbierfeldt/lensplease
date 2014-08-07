@@ -40,6 +40,20 @@
       {% endif %}
       {{ form.password2 }}
     </p>
+    <p>
+      <label for="id_location">Location:</label>
+      {% if form.locaiton.errors %}
+        <p class="errors">{{ form.location.errors.as_text }}</p>
+      {% endif %}
+      {{ form.location }}
+    </p>
+    <p>
+      <label for="id_affiliation">College/University:</label>
+      {% if form.affiliation.errors %}
+        <p class="errors">{{ form.affilitation.errors.as_text }}</p>
+      {% endif %}
+      {{ form.affiliation }}
+    </p>
     <p class="submit"><input type="submit" value="Register &rarr;"></p>
   </form>
   

@@ -1,0 +1,11 @@
+{% extends "photographer/registration_base.html" %}
+{% load staticfiles %}
+
+{% block sub_content %}
+    {% if messages %}
+        <p>Hey messages</p>
+    {% else %}
+        <p>No messages</p>
+    {% endif %}
+    {{ photographer_username }}
+{% endblock %}
