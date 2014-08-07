@@ -27,7 +27,7 @@ class LandingPhotographerRequestForm(ModelForm):
             'city': forms.TextInput(attrs={'placeholder': 'City', 'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control bfh-phone', 'data-country': 'US'}),
             'organization': forms.TextInput(attrs={'placeholder': 'Organization (optional)', 'class': 'form-control'}),
-            'max_price': SliderWidget(attrs={'data-slider-id': 'id_max_priceSlider', 'data-slider-min': 10, 'data-slider-max': 100, 'data-slider-step': 1}),
+            'max_price': SliderWidget(attrs={'data-slider-id': 'id_max_priceSlider', 'data-slider-min': 10, 'data-slider-max': 200, 'data-slider-step': 1}),
             'date_needed': forms.DateInput(attrs={'placeholder': 'mm/dd/yyyy', 'class': 'form-control', 'type': 'date'}),
             'message': forms.Textarea(attrs={'placeholder': 'Howdy! I\'m looking for...', 'class': 'form-control', 'rows':4}),
         }
