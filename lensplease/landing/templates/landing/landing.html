@@ -28,27 +28,20 @@
     <link href="{% static 'landing/css/bootstrap-formhelpers.min.css' %}" rel="stylesheet">
 {% endblock %}
 
-{% block javascript %}		
+{% block javascript %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript">
         function initalize() {
-            goToOnLoadAnchor();
             loadPriceSlider();
         }
-        function goToOnLoadAnchor() {
-            target_element = document.getElementById('{{ anchor }}');
-            if (target_element != null){
-                target_element.scrollIntoView();
-            }
-        }
-        
         function loadPriceSlider() {
             $('#id_max_price').slider({
                 formater: function(value) {
                     return 'I\'d pay: $' + value;
                 }
             })
-        }
-        
+        }        
     </script>
 {% endblock %}
 
@@ -304,4 +297,40 @@
             </div><!-- ./container-fluid -->
 				
         </div><!-- /.container-8 -->
+        <script type="text/javascript">
+        $('ul.nav-tabs').each(function(){
+            var $active, $content, $links = $(this).find('a');
+            
+            // If the location.hash matches one of the links, use that as the active tab.
+            // If no match is found, use the first link as the initial active tab.
+            $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+            $active.addClass('active');
+
+            $content = $($active[0].hash);
+            
+            // Hide the remaining content
+            $links.not($active).each(function () {
+                $(this.hash).hide();
+            });
+            
+            // Bind the click event handler
+            $(this).on('click', 'a', function(e){
+                // Make the old tab inactive.
+                $active.removeClass('active');
+                $content.hide();
+                
+                // Update the variables with the new link and content
+                $active = $(this);
+                $content = $(this.hash);
+                
+                // Make the tab active.
+                $active.addClass('active');
+                $content.show();
+                
+                // Prevent the anchor's default click action
+                e.preventDefault();
+            });
+        });
+        </script>
+
 {% endblock %}
