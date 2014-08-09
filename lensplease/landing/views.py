@@ -15,22 +15,3 @@ class LandingView(TemplateView):
         context['photographerregistration_form'] = LandingPhotographerRegistrationForm
         
         return context
-        
-class PhotographerRequestCreate(SuccessMessageMixin, CreateView):
-
-    template_name = 'landing/landing.html'
-    form_class = LandingPhotographerRequestForm
-    success_message = "Thanks, %(first_name)s! We'll contact you at %(email)s when we have news for you."
-    
-    def get_context_data(self, **kwargs):
-        context = super(PhotographerRequestCreate, self).get_context_data(**kwargs)
-        context['photographerrequest_form'] = context.get('form')
-        context['anchor'] = 'request-form'
-        return context
-        
-    def get_success_url(self):
-        return reverse('landing')
-        
-    def form_valid(self, form, **kwargs):
-        form.save(commit = True)
-        return super(PhotographerRequestCreate, self).form_valid(form)

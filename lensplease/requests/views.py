@@ -26,5 +26,3 @@ class PhotographerRequestUpdate(UpdateView):
 class PhotographerRequestDelete(DeleteView):
     model = PhotographerRequest
     success_url = "/"
-        
-

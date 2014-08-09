@@ -1,5 +1,6 @@
 from registration.forms import RegistrationForm
 from django import forms
+from photographer.models import PhotographerProfile
 
 class LandingPhotographerRegistrationForm(RegistrationForm):
     def __init__(self, *args, **kwargs):
@@ -14,3 +15,7 @@ class LandingPhotographerRegistrationForm(RegistrationForm):
     location = forms.CharField(widget=forms.TextInput(attrs=dict(common_attrs_dict, placeholder="Location")))
     affiliation = forms.CharField(widget=forms.TextInput(attrs=dict(common_attrs_dict, placeholder="College/University")))
     
+class PhotographerProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = PhotographerProfile
+        exclude = ('user',)
