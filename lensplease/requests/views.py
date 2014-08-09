@@ -18,11 +18,3 @@ class PhotographerRequestCreate(SuccessMessageMixin, CreateView):
         
     def get_success_url(self):
         return reverse('landing')
-        
-class PhotographerRequestUpdate(UpdateView):
-    model = PhotographerRequest
-    success_url = "/"
-    
-class PhotographerRequestDelete(DeleteView):
-    model = PhotographerRequest
-    success_url = "/"
