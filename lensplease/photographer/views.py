@@ -48,5 +48,5 @@ class PhotographerActivationView(ActivationView):
         return super(PhotographerActivationView, self).form_valid(request, form)
     
     def get_success_url(self, request, user):
-        print messages.success(request, "Your account was successfully created %(user.username)s! Please take a moment to fill out the rest of your profile.", extra_tags='msg')
+        print messages.success(request, "Your account was successfully created, %s. Please take a moment to fill out the rest of your profile." % user.username)
         return ('photographer_profile_update', (), {"photographer_username": user.username})
