@@ -1,0 +1,25 @@
+{% extends "shutterclub/base.html" %}
+{% load staticfiles %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link href="{% static 'landing/css/landing.css' %}" rel="stylesheet">
+    <link href="{% static 'landing/css/bootstrap-formhelpers.min.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container-1">
+    <div class="container">
+    	<div class="carousel">
+    	    {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            {% block sub_content %}
+            {% endblock %}
+        </div><!-- /.carousel -->
+    	<h1 class="headline-1">Good for Customers, Good for Photographers.</h1>
+    </div><!-- /.container -->
+</div><!-- /.container-1 -->
+{% endblock %}

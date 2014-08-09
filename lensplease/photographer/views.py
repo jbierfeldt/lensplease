@@ -1,6 +1,7 @@
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
 from django.contrib import messages
+from django.http import Http404
 
 from registration.backends.default.views import RegistrationView, ActivationView
 
@@ -16,15 +17,21 @@ class PhotographerProfileDetailView(DetailView):
         obj = PhotographerProfile.objects.get(user__username=self.kwargs['photographer_username'])
         return obj
 
-
 class PhotographerProfileUpdateView(UpdateView):
+    """
+    User wants to edit his/her profile page.
+    """
+    
     model = PhotographerProfile
     form_class = PhotographerProfileUpdateForm
     template_name_suffix = '_update_form'
     
     def get_object(self, queryset=None):
         obj = PhotographerProfile.objects.get(user__username=self.kwargs['photographer_username'])
-        return obj
+        if obj.user.id != self.request.user.id:
+            raise Http404('You do not have permission to view this page')
+        else:
+            return obj
         
 
 class PhotographerRegistrationView(RegistrationView):
