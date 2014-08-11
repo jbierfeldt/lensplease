@@ -31,8 +31,8 @@ DATABASES = {
 SECRET_KEY = os.environ["PROD_SECRET_KEY"]
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "shutterclub.io@gmail.com"
-EMAIL_HOST_PASSWORD = os.environ["GMAIL_PASS"]
-DEFAULT_FROM_EMAIL = 'shutterclub.io@gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "donotreply@shutterclub.co"
+EMAIL_HOST_PASSWORD = os.environ["ZOHO_PASS"]
+DEFAULT_FROM_EMAIL = 'donotreply@shutterclub.co'
