@@ -4,8 +4,8 @@
 {% block sub_content %}
     <p><a href="{% url 'photographer_profile_update' photographer_username=object.user %}">Update Info?</a></p>
     <h1>{{ object.user }}'s Profile!</h1>
-    <p>Name: {{ object.first_name }} {{ object.last_name }}</p>
-    <p>Age: {{ object.age }}</p>
+    {% if object.first_name %}<p>Name: {{ object.first_name }} {{ object.last_name }}</p>{% endif %}
+    {% if object.age %}<p>Age: {{ object.age }}</p>{% endif %}
     <p>Location: {{ object.location }}</p>
     <p>College/University: {{ object.affiliation }}</p>
 {% endblock %}
