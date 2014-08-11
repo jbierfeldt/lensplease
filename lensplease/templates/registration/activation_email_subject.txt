@@ -1,1 +1,1 @@
-Activate your Shutterclub.io account—you have {{ expiration_days }} days!
+Activate your Shutterclub.co account—you have {{ expiration_days }} days!
