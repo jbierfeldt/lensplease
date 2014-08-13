@@ -30,9 +30,17 @@ DATABASES = {
         
 SECRET_KEY = os.environ["PROD_SECRET_KEY"]
 
+CLOUDINARY = {
+		'cloud_name': 'shutterclub',  
+		'api_key': '464786232878322',  
+		'api_secret': os.environ["CLOUDINARY_SECRET_KEY"],  
+	}
+
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "donotreply@shutterclub.co"
 EMAIL_HOST_PASSWORD = os.environ["ZOHO_PASS"]
 DEFAULT_FROM_EMAIL = 'donotreply@shutterclub.co'
+
+

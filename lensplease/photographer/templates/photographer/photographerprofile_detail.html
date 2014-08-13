@@ -1,11 +1,38 @@
 {% extends "photographer/photographer_base.html" %}
 {% load staticfiles %}
+{% load cloudinary %}      
 
 {% block sub_content %}
-    <p><a href="{% url 'photographer_profile_update' photographer_username=object.user %}">Update Info?</a></p>
+    {% if user.is_authenticated %}
+        {% if user.id == object.user.id %}
+            <a href="{% url 'photographer_profile_update' photographer_username=object.user %}"><button type="button">Update your Profile</button></a>
+            <p>Permalink to your Profile: <a href="{% url 'photographer_profile_detail' photographer_username=object.user %}">http://dev.shutterclub.co{% url 'photographer_profile_detail' photographer_username=object.user %}</a>
+        {% endif %}
+    {% endif %}
+    
     <h1>{{ object.user }}'s Profile!</h1>
-    <p>Name: {{ object.first_name }} {{ object.last_name }}</p>
-    <p>Age: {{ object.age }}</p>
+    {% if object.first_name %}<p>Name: {{ object.first_name }} {{ object.last_name }}</p>{% endif %}
+    {% if object.age %}<p>Age: {{ object.age }}</p>{% endif %}
     <p>Location: {{ object.location }}</p>
     <p>College/University: {{ object.affiliation }}</p>
+    {% if object.price_range %}<p>Price Range: {{ object.price_range }}</p>{% endif %}
+    {% if object.specialties %}<p>Specialties: {{ object.specialties }}</p>{% endif %}
+    {% if object.short_description %}<p>Short Description: {{ object.short_description }}</p>{% endif %}
+    {% if object.bio %}<p>Biography: {{ object.bio }}</p>{% endif %}
+    {% if object.camera %}<p>Camera: {{ object.camera }}</p>{% endif %}
+    {% if object.other_equipment %}<p>Other Equipment: {{ object.other_equipment }}</p>{% endif %}
+    {% if object.editing %}<p>Editing Software: {{ object.editing }}</p>{% endif %}
+    {% if six_photos %}
+    <div class="row row-form">
+        {% for photo in six_photos %}
+            <div class="col-md-4 col-sm-4">
+                {% cloudinary photo.image format="jpg" width=200 height=200 %}
+            </div>
+            {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                </div><!-- row -->
+                <div class="row row-form">
+            {% endif %}
+        {% endfor %}
+    </div><!-- row -->
+    {% endif %}
 {% endblock %}

@@ -1,9 +1,29 @@
 {% extends "photographer/photographer_base.html" %}
-{% load staticfiles %}
 
 {% block sub_content %}
+    <a href="{% url 'photographer_profile_detail' photographer_username=object.user %}"><button type="button">Back to Profile</button></a>
     <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update" />
+        <div class="row row-form">
+            {% for p in form %}
+                <div class="col-md-4 col-sm-4">
+                    {{ p.label }}<br />
+                    {{ p }}
+                </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    </div><!-- row -->
+                    <div class="row row-form">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row row-form">
+            <div class="col-md-offset-6 col-md-6 col-sm-6">
+                <a href="{% url 'photographer_profile_photos_create' photographer_username=object.user %}"><button type="button">Upload Photos</button></a>
+            </div>
+        </div>
+        <div class="row-row-form">
+            <div class="col-md-6 col-sm-12">
+                <button type="submit" class="submit-request">Update</button>
+            </div>
+        </div><!-- /.row -->
     </form>
 {% endblock %}

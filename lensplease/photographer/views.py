@@ -16,6 +16,12 @@ class PhotographerProfileDetailView(DetailView):
     def get_object(self, queryset=None):
         obj = PhotographerProfile.objects.get(user__username=self.kwargs['photographer_username'])
         return obj
+          
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(PhotographerProfileDetailView, self).get_context_data(**kwargs)
+        context['six_photos'] = self.get_object().portfoliophoto_set.all()[:6]
+        return context
 
 class PhotographerProfileUpdateView(UpdateView):
     """

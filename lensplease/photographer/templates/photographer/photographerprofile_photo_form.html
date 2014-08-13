@@ -1,0 +1,26 @@
+{% extends "photographer/photographer_base.html" %}
+
+{% block sub_content %}
+<a href="{% url 'photographer_profile_update' photographer_username=user.username %}"><button type="button">Back to Updating Profile</button></a>
+<form action="" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="row row-form">
+            {% for p in form %}
+                <div class="col-md-6 col-sm-6">
+                    {{ p.label }}<br />
+                    {{ p }}
+                </div>
+                {% if forloop.counter|divisibleby:2 and not forloop.last %}
+                    </div><!-- row -->
+                    <div class="row row-form">
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    <div class="row-row-form">
+        <div class="col-md-6 col-sm-12">
+            <button type="submit" class="submit-request">Upload</button>
+        </div>
+    </div><!-- /.row -->
+</form>
+{% endblock %}

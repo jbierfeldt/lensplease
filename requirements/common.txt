@@ -3,3 +3,4 @@ South==0.8.4
 psycopg2==2.5.2
 Unipath
 django-registration==1.0
+cloudinary

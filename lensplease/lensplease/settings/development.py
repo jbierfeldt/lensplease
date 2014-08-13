@@ -23,6 +23,12 @@ DATABASES = {
     }
 }
 
+CLOUDINARY = {
+		'cloud_name': 'shutterclub',  
+		'api_key': '855689141222994',  
+		'api_secret': 'G7soco3nw_N_CTpxzybtRKlXw54',  
+	}
+
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1026
 EMAIL_HOST_USER = ""
